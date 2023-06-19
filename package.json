@@ -1,23 +1,20 @@
 {
   "name": "new-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Express.js API for Netlify",
+  "main": "server.js",
   "scripts": {
-  "start": "nodemon server.js",
-  "build": "netlify build",
-  "test": "echo 'No tests specified'"
-},
-"dependencies": {
-  "express": "^4.18.2",
-  "netlify-cli": "^3.36.0"
-},
-"devDependencies": {
-  "nodemon": "^2.0.15"
-},
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "echo 'No build step required'"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
-  
-  
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
