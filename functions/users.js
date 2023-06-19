@@ -9,12 +9,12 @@ const users = [
 ];
 
 // Get all users
-app.get("/", (req, res) => {
+app.get("/users", (req, res) => {
   res.json(users);
 });
 
 // Get a specific user by ID
-app.get("/:id", (req, res) => {
+app.get("/users/:id", (req, res) => {
   const userId = parseInt(req.params.id);
   const user = users.find((user) => user.id === userId);
 
