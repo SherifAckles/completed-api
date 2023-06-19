@@ -2,20 +2,13 @@ const express = require("express");
 const app = express();
 const usersRouter = require("./functions/users");
 
-// Array of users
-const users = [
-  { id: 1, name: "John Doe" },
-  { id: 2, name: "Jane Smith" },
-  { id: 3, name: "Bob Johnson" },
-];
-
 // Root route
 app.get("/", (req, res) => {
   res.send("Welcome to the API");
 });
 
 // Mount the users router
-app.use("/users", usersRouter);
+app.use("/.netlify/functions", usersRouter);
 
 // Default route for unmatched paths
 app.use((req, res) => {

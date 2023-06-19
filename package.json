@@ -4,19 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "npx netlify dev",
-    "build": "echo 'No build step required for serverless functions'",
-    "test": "echo 'No tests specified'"
-  },
+  "start": "nodemon server.js",
+  "build": "netlify build",
+  "test": "echo 'No tests specified'"
+},
+"dependencies": {
+  "express": "^4.18.2",
+  "netlify-cli": "^3.36.0"
+},
+"devDependencies": {
+  "nodemon": "^2.0.15"
+},
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express.js": "^1.0.0",
-    "netlify-cli": "^15.6.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  }
+  "license": "ISC"
+  
+  
 }

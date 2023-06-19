@@ -25,4 +25,4 @@ app.get("/users/:id", (req, res) => {
   }
 });
 
-module.exports.handler = app;
+module.exports = app;
