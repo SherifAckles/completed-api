@@ -1,6 +1,5 @@
 [build]
-# MODIFIED FOR PRODUCTION
-  command = "npm start"
+  command = "npm run build"
   functions = "functions"
 
 [build.environment]

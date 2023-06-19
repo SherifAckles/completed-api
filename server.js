@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const usersRouter = require("./functions/users");
 
 // Array of users
 const users = [
@@ -8,21 +9,17 @@ const users = [
   { id: 3, name: "Bob Johnson" },
 ];
 
-// Get all users
-app.get("/users", (req, res) => {
-  res.json(users);
+// Root route
+app.get("/", (req, res) => {
+  res.send("Welcome to the API");
 });
 
-// Get a specific user by ID
-app.get("/users/:id", (req, res) => {
-  const userId = parseInt(req.params.id);
-  const user = users.find((user) => user.id === userId);
+// Mount the users router
+app.use("/users", usersRouter);
 
-  if (user) {
-    res.json(user);
-  } else {
-    res.status(404).json({ error: "User not found" });
-  }
+// Default route for unmatched paths
+app.use((req, res) => {
+  res.status(404).json({ error: "Not Found" });
 });
 
 const port = process.env.PORT || 3000;
